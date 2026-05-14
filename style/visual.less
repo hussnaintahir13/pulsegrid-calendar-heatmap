@@ -1,0 +1,114 @@
+.pg-root {
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .pg-title {
+        font-size: 1.1em;
+        font-weight: 600;
+        margin: 0 0 10px;
+    }
+
+    .pg-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .pg-svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .pg-cell {
+        cursor: pointer;
+        outline: none;
+        transition: opacity 80ms ease-in-out;
+
+        &:hover { opacity: 0.85; }
+        &:focus {
+            stroke: #0078D4;
+            stroke-width: 1.5;
+            stroke-opacity: 1;
+        }
+    }
+
+    .pg-cell-value {
+        font-size: 9px;
+        font-weight: 600;
+        pointer-events: none;
+    }
+
+    .pg-year-label {
+        font-size: 11px;
+        font-weight: 600;
+    }
+
+    .pg-month-label {
+        font-size: 10px;
+        opacity: 0.85;
+    }
+
+    .pg-day-label,
+    .pg-day-label-small {
+        font-size: 9px;
+        opacity: 0.75;
+    }
+
+    .pg-month-grid {
+        display: grid;
+        gap: 12px;
+        align-items: start;
+    }
+
+    .pg-month-block {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .pg-month-heading {
+        font-size: 0.85em;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+
+    .pg-legend {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75em;
+        opacity: 0.85;
+        margin-top: 4px;
+
+        .pg-legend-label { font-variant-numeric: tabular-nums; }
+        .pg-legend-swatches { display: flex; gap: 2px; }
+        .pg-legend-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            display: inline-block;
+        }
+    }
+
+    .pg-empty {
+        text-align: center;
+        padding: 28px 18px;
+        opacity: 0.75;
+
+        h3 { margin: 0 0 8px; font-size: 1em; }
+        p  { margin: 0; font-size: 0.85em; line-height: 1.35; }
+    }
+}
+
+@media (forced-colors: active) {
+    .pg-root {
+        .pg-cell { stroke: CanvasText; stroke-width: 0.75; stroke-opacity: 1; }
+        .pg-legend-swatch { border: 1px solid CanvasText; }
+    }
+}

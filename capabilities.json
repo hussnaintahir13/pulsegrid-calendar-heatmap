@@ -1,0 +1,123 @@
+{
+  "dataRoles": [
+    { "displayName": "Date", "name": "date", "kind": "Grouping" },
+    { "displayName": "Value", "name": "value", "kind": "Measure" },
+    { "displayName": "Tooltips", "name": "tooltips", "kind": "Measure" }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        { "date": { "max": 1 }, "value": { "max": 1 } }
+      ],
+      "categorical": {
+        "categories": {
+          "for": { "in": "date" },
+          "dataReductionAlgorithm": { "top": { "count": 30000 } }
+        },
+        "values": {
+          "select": [
+            { "bind": { "to": "value" } },
+            { "bind": { "to": "tooltips" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "layout": {
+      "properties": {
+        "viewMode": {
+          "type": {
+            "enumeration": [
+              { "displayName": "Year strip (GitHub style)", "value": "yearStrip" },
+              { "displayName": "Month grid", "value": "monthGrid" },
+              { "displayName": "Week strip", "value": "weekStrip" }
+            ]
+          }
+        },
+        "startOfWeek": {
+          "type": {
+            "enumeration": [
+              { "displayName": "Sunday", "value": "sun" },
+              { "displayName": "Monday", "value": "mon" }
+            ]
+          }
+        },
+        "cellSize": { "type": { "numeric": true } },
+        "cellGap": { "type": { "numeric": true } },
+        "cellRadius": { "type": { "numeric": true } },
+        "showMonthLabels": { "type": { "bool": true } },
+        "showDayLabels": { "type": { "bool": true } },
+        "showYearLabels": { "type": { "bool": true } },
+        "showLegend": { "type": { "bool": true } },
+        "showTitle": { "type": { "bool": true } },
+        "titleText": { "type": { "text": true } }
+      }
+    },
+    "aggregation": {
+      "properties": {
+        "aggregationType": {
+          "type": {
+            "enumeration": [
+              { "displayName": "Sum", "value": "sum" },
+              { "displayName": "Average", "value": "avg" },
+              { "displayName": "Min", "value": "min" },
+              { "displayName": "Max", "value": "max" },
+              { "displayName": "Count", "value": "count" }
+            ]
+          }
+        },
+        "treatBlankAsZero": { "type": { "bool": true } }
+      }
+    },
+    "colors": {
+      "properties": {
+        "scheme": {
+          "type": {
+            "enumeration": [
+              { "displayName": "GitHub Green", "value": "githubGreen" },
+              { "displayName": "Ocean Blue", "value": "oceanBlue" },
+              { "displayName": "Sunset", "value": "sunset" },
+              { "displayName": "Plasma", "value": "plasma" },
+              { "displayName": "Viridis (colour-blind safe)", "value": "viridis" },
+              { "displayName": "Diverging (red → white → blue)", "value": "diverging" },
+              { "displayName": "Custom", "value": "custom" }
+            ]
+          }
+        },
+        "bucketCount": { "type": { "numeric": true } },
+        "customLow": { "type": { "fill": { "solid": { "color": true } } } },
+        "customMid": { "type": { "fill": { "solid": { "color": true } } } },
+        "customHigh": { "type": { "fill": { "solid": { "color": true } } } },
+        "useCustomMid": { "type": { "bool": true } },
+        "emptyColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "backgroundColor": { "type": { "fill": { "solid": { "color": true } } } },
+        "textColor": { "type": { "fill": { "solid": { "color": true } } } }
+      }
+    },
+    "scale": {
+      "properties": {
+        "useDataMin": { "type": { "bool": true } },
+        "useDataMax": { "type": { "bool": true } },
+        "minValue": { "type": { "numeric": true } },
+        "maxValue": { "type": { "numeric": true } }
+      }
+    },
+    "accessibility": {
+      "properties": {
+        "cellBorders": { "type": { "bool": true } },
+        "valueLabels": { "type": { "bool": true } },
+        "decimalPlaces": { "type": { "numeric": true } }
+      }
+    }
+  },
+  "supportsHighlight": true,
+  "supportsLandingPage": true,
+  "supportsKeyboardFocus": true,
+  "supportsMultiVisualSelection": true,
+  "tooltips": {
+    "supportedTypes": { "default": true, "canvas": true },
+    "roles": ["tooltips"]
+  },
+  "privileges": []
+}

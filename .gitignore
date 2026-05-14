@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.tmp/
+*.pbiviz
+webpack.statistics.*.html
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db

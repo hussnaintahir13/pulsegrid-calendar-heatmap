@@ -1,0 +1,8 @@
+{
+    "Visual_Title": "PulseGrid Calendar Heatmap",
+    "Field_Date": "Date",
+    "Field_Value": "Value",
+    "Empty_Prefix": "Add a ",
+    "Empty_Middle": " field and a ",
+    "Empty_Suffix": " measure to begin. The chart will render one cell per day, coloured by the chosen scheme."
+}

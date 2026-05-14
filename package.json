@@ -1,0 +1,58 @@
+{
+  "name": "pulsegrid-calendar-heatmap",
+  "version": "1.0.0",
+  "description": "PulseGrid — a Power BI custom visual that renders any date-keyed measure as a GitHub-style calendar heatmap (year strip, month grid, or week strip) with built-in aggregation, accessible colour schemes, and keyboard navigation.",
+  "keywords": [
+    "powerbi",
+    "powerbi-visuals",
+    "calendar",
+    "heatmap",
+    "github-contributions",
+    "time-series",
+    "density",
+    "seasonality"
+  ],
+  "scripts": {
+    "pbiviz": "pbiviz",
+    "start": "pbiviz start",
+    "package": "pbiviz package",
+    "lint": "tsc --noEmit"
+  },
+  "author": {
+    "name": "Syed Hussnain Tahir Sherazi",
+    "email": "contact@syedhussnain.co.uk",
+    "url": "https://www.syedhussnain.com"
+  },
+  "contributors": [
+    {
+      "name": "Syed Hussnain Tahir Sherazi",
+      "email": "contact@syedhussnain.co.uk",
+      "url": "https://uk.linkedin.com/in/hussnainsherazi"
+    }
+  ],
+  "homepage": "https://www.syedhussnain.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hussnaintahir13/pulsegrid-calendar-heatmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hussnaintahir13/pulsegrid-calendar-heatmap/issues",
+    "email": "contact@syedhussnain.co.uk"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "powerbi-visuals-api": "~5.11.0",
+    "powerbi-visuals-utils-formattingmodel": "6.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^9.0.0",
+    "eslint-plugin-powerbi-visuals": "^1.1.1",
+    "globals": "^17.4.0",
+    "less": "^4.2.0",
+    "powerbi-visuals-tools": "~5.5.1",
+    "typescript": "^5.4.0"
+  }
+}
