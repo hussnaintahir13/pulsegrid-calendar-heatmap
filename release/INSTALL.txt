@@ -1,0 +1,85 @@
+PULSEGRID CALENDAR HEATMAP - INSTALL GUIDE
+==========================================
+
+This folder contains the ready-to-use Power BI custom visual file:
+    pulseGridCalendarHeatmap*.1.0.0.0.pbiviz
+
+You do NOT need Node.js, the pbiviz CLI, or any developer tooling to
+install this visual. Just download the .pbiviz file and import it.
+
+
+HOW TO INSTALL IN POWER BI DESKTOP
+----------------------------------
+
+1. Download the .pbiviz file from this folder.
+   - In GitHub: click the filename, then click "Download raw file".
+
+2. Open Power BI Desktop and open the report you want to add it to.
+
+3. In the Visualizations pane on the right, click the three dots ("...")
+   at the bottom of the icon grid.
+
+4. Choose "Import a visual from a file".
+
+5. Click OK on the safety warning, browse to the downloaded .pbiviz,
+   and select it.
+
+6. The PulseGrid icon will appear at the bottom of the Visualizations
+   pane. Drag it onto your report canvas.
+
+7. Bind a Date field to the Date well, and a Value measure to the
+   Value well. Tooltips are optional.
+
+
+HOW TO INSTALL IN POWER BI SERVICE (powerbi.com)
+------------------------------------------------
+
+1. Open a report in Edit mode in the Power BI Service.
+
+2. Visualizations pane -> three dots ("...") -> Import a visual from
+   a file -> pick the downloaded .pbiviz.
+
+
+TENANT POLICY BLOCKS THE IMPORT?
+--------------------------------
+
+Some Power BI tenants block uncertified custom visuals. If you see a
+policy error during import, ask your Power BI administrator to add
+this visual to the Organisational Visuals list:
+
+    Power BI Admin Portal
+        -> Tenant settings
+        -> Organisational visuals
+        -> Add a custom visual
+        -> Upload the .pbiviz from this folder
+
+Once added there, every user in your tenant can use the visual
+without further approval.
+
+
+VERIFYING THE FILE IS UP TO DATE
+--------------------------------
+
+The filename embeds the visual's unique GUID and version number:
+
+    pulseGridCalendarHeatmap<GUID>.<version>.pbiviz
+
+If the version in the filename differs from the version shown on the
+GitHub Releases page for this repository, you may be looking at an
+older download. Pull the latest copy from this folder and re-import.
+
+
+CONTACT
+-------
+
+Author : Syed Hussnain Tahir Sherazi
+Site   : https://www.syedhussnain.com
+LinkedIn: https://uk.linkedin.com/in/hussnainsherazi
+Email  : contact@syedhussnain.co.uk
+GitHub : https://github.com/hussnaintahir13/pulsegrid-calendar-heatmap
+
+
+LICENSE
+-------
+
+MIT. See the LICENSE file in the repository root.
