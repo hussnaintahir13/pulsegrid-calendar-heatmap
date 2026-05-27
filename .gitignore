@@ -2,6 +2,7 @@ node_modules/
 dist/
 .tmp/
 *.pbiviz
+!release/*.pbiviz
 webpack.statistics.*.html
 .vscode/
 .idea/

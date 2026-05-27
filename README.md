@@ -40,6 +40,10 @@ DailyOrders = CALCULATE(COUNTROWS('Sales'), USERELATIONSHIP('Sales'[OrderDate], 
 
 Drop `Calendar[Date]` into the **Date** well and `[DailyOrders]` into **Value**. Switch the colour scheme to *Diverging* if you'd rather show variance vs a baseline (set manual min/max to symmetrical bounds around zero).
 
+## Quick install (no build required)
+
+Grab the latest `.pbiviz` from [`release/`](release/) and import it in Power BI Desktop via **Visualizations → … → Import a visual from a file**. See [`release/README.md`](release/README.md) for screenshots and tenant-policy notes.
+
 ## Development setup
 
 ```powershell
