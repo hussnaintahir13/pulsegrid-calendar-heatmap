@@ -30,10 +30,33 @@ const isoDay = (d: Date): string => {
     return `${y}-${m}-${day}`;
 };
 
+// NOTE: powerbi-visuals-utils-formattingutils (valueFormatter) is not installed,
+// so numeric tooltip values are formatted with a minimal formatter that honours
+// simple format strings only (decimal-place counts like "0.00", a leading currency
+// symbol, and trailing "%"). Complex format strings fall back to the raw number.
+const formatNumeric = (n: number, format?: string): string => {
+    if (!format) return String(n);
+    const isPercent = /%$/.test(format);
+    const scaled = isPercent ? n * 100 : n;
+    const decimalMatch = format.match(/\.(0+|#+)/);
+    const decimals = decimalMatch ? decimalMatch[1].length : undefined;
+    const useGrouping = /,#|,0/.test(format) || /#,|0,/.test(format);
+    let body = decimals != null ? scaled.toFixed(decimals) : String(scaled);
+    if (useGrouping) {
+        const parts = body.split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        body = parts.join(".");
+    }
+    const currencyMatch = format.match(/^([^#0,.]+)/);
+    const prefix = !isPercent && currencyMatch ? currencyMatch[1] : "";
+    const suffix = isPercent ? "%" : "";
+    return `${prefix}${body}${suffix}`;
+};
+
 const formatExtra = (col: DataViewValueColumn, v: powerbi.PrimitiveValue | undefined | null): string => {
     if (v == null) return "";
-    if (typeof v === "number" && col.source.format) {
-        return String(v);
+    if (typeof v === "number") {
+        return formatNumeric(v, col.source.format);
     }
     if (v instanceof Date) return v.toISOString().slice(0, 10);
     return String(v);

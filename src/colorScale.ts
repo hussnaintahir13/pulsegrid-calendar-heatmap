@@ -37,7 +37,6 @@ function buildBuckets(low: string, high: string, count: number, mid?: string): s
     const result: string[] = [];
     if (mid) {
         const m = hexToRgb(mid);
-        const half = Math.floor(count / 2);
         for (let i = 0; i < count; i++) {
             const t = i / Math.max(1, count - 1);
             let c: Rgb;
@@ -47,7 +46,6 @@ function buildBuckets(low: string, high: string, count: number, mid?: string): s
                 c = mix(m, b, (t - 0.5) / 0.5);
             }
             result.push(rgbToHex(c));
-            void half;
         }
     } else {
         for (let i = 0; i < count; i++) {

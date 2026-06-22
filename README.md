@@ -1,5 +1,8 @@
 # PulseGrid — Calendar Heatmap
 
+## Quick start (non-technical)
+New here? Read **[HOW-TO-USE.md](HOW-TO-USE.md)** for a plain-English guide to importing and using this visual.
+
 A Power BI custom visual that renders any date-keyed measure as a GitHub-style calendar heatmap. Choose from a year strip, a month grid, or a week strip; pick from six built-in colour schemes (including colour-blind safe **Viridis** and a **Diverging** scheme for variance data) or define your own; cells expose tooltips and keyboard navigation.
 
 ## Why it matters

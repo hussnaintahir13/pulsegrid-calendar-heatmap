@@ -146,11 +146,22 @@ export class Visual implements IVisual {
             const bg = cp.background?.value || "#000000";
             const fg = cp.foreground?.value || "#FFFFFF";
             const accent = cp.foregroundSelected?.value || fg;
+            const count = Math.max(3, Math.min(9, Math.round(c.bucketCount.value)));
             return {
                 background: bg,
                 text: fg,
                 empty: bg,
-                buckets: [bg, fg, accent, fg, accent].slice(0, Math.max(3, Math.min(9, Math.round(c.bucketCount.value))))
+                buckets: buildScheme(
+                    "custom",
+                    count,
+                    bg,
+                    accent,
+                    fg,
+                    true,
+                    bg,
+                    bg,
+                    fg
+                ).buckets
             };
         }
         return buildScheme(
